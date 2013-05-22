@@ -1,0 +1,1544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SimpleFlowModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SimpleFlowModelStoreContainer">
+          <EntitySet Name="ActionInputs" EntityType="SimpleFlowModel.Store.ActionInputs" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ActionOptions" EntityType="SimpleFlowModel.Store.ActionOptions" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ActionOutputs" EntityType="SimpleFlowModel.Store.ActionOutputs" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Actions" EntityType="SimpleFlowModel.Store.Actions" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ApplicationInfo" EntityType="SimpleFlowModel.Store.ApplicationInfo" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Connections" EntityType="SimpleFlowModel.Store.Connections" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="FlowActionInputs" EntityType="SimpleFlowModel.Store.FlowActionInputs" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="FlowActionOptions" EntityType="SimpleFlowModel.Store.FlowActionOptions" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="FlowActionOutputs" EntityType="SimpleFlowModel.Store.FlowActionOutputs" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="FlowActions" EntityType="SimpleFlowModel.Store.FlowActions" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="FlowInstances" EntityType="SimpleFlowModel.Store.FlowInstances" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="FlowMOInstances" EntityType="SimpleFlowModel.Store.FlowMOInstances" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="FlowMultiOptions" EntityType="SimpleFlowModel.Store.FlowMultiOptions" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Flows" EntityType="SimpleFlowModel.Store.Flows" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="MonitorInstances" EntityType="SimpleFlowModel.Store.MonitorInstances" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Options" EntityType="SimpleFlowModel.Store.Options" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="UseCases" EntityType="SimpleFlowModel.Store.UseCases" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Users" EntityType="SimpleFlowModel.Store.Users" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <AssociationSet Name="FK_ActionInputs_Actions" Association="SimpleFlowModel.Store.FK_ActionInputs_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="ActionInputs" EntitySet="ActionInputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActionOptions_Actions" Association="SimpleFlowModel.Store.FK_ActionOptions_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="ActionOptions" EntitySet="ActionOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActionOptions_Options" Association="SimpleFlowModel.Store.FK_ActionOptions_Options">
+            <End Role="Options" EntitySet="Options" />
+            <End Role="ActionOptions" EntitySet="ActionOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActionOutputs_Actions" Association="SimpleFlowModel.Store.FK_ActionOutputs_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="ActionOutputs" EntitySet="ActionOutputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Connections_Actions" Association="SimpleFlowModel.Store.FK_Connections_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="Connections" EntitySet="Connections" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Connections_Actions1" Association="SimpleFlowModel.Store.FK_Connections_Actions1">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="Connections" EntitySet="Connections" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionInputs_ActionInputs" Association="SimpleFlowModel.Store.FK_FlowActionInputs_ActionInputs">
+            <End Role="ActionInputs" EntitySet="ActionInputs" />
+            <End Role="FlowActionInputs" EntitySet="FlowActionInputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionInputs_Flows" Association="SimpleFlowModel.Store.FK_FlowActionInputs_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowActionInputs" EntitySet="FlowActionInputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionOptions_ActionOptions" Association="SimpleFlowModel.Store.FK_FlowActionOptions_ActionOptions">
+            <End Role="ActionOptions" EntitySet="ActionOptions" />
+            <End Role="FlowActionOptions" EntitySet="FlowActionOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionOptions_Flows" Association="SimpleFlowModel.Store.FK_FlowActionOptions_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowActionOptions" EntitySet="FlowActionOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionOutputs_ActionOutputs" Association="SimpleFlowModel.Store.FK_FlowActionOutputs_ActionOutputs">
+            <End Role="ActionOutputs" EntitySet="ActionOutputs" />
+            <End Role="FlowActionOutputs" EntitySet="FlowActionOutputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionOutputs_Flows" Association="SimpleFlowModel.Store.FK_FlowActionOutputs_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowActionOutputs" EntitySet="FlowActionOutputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActions_Actions" Association="SimpleFlowModel.Store.FK_FlowActions_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="FlowActions" EntitySet="FlowActions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActions_Flows" Association="SimpleFlowModel.Store.FK_FlowActions_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowActions" EntitySet="FlowActions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowInstances_Actions" Association="SimpleFlowModel.Store.FK_FlowInstances_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="FlowInstances" EntitySet="FlowInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowInstances_Flows" Association="SimpleFlowModel.Store.FK_FlowInstances_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowInstances" EntitySet="FlowInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowInstances_Users" Association="SimpleFlowModel.Store.FK_FlowInstances_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="FlowInstances" EntitySet="FlowInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowMOInstances_FlowInstances" Association="SimpleFlowModel.Store.FK_FlowMOInstances_FlowInstances">
+            <End Role="FlowInstances" EntitySet="FlowInstances" />
+            <End Role="FlowMOInstances" EntitySet="FlowMOInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowMOInstances_FlowMultiOptions" Association="SimpleFlowModel.Store.FK_FlowMOInstances_FlowMultiOptions">
+            <End Role="FlowMultiOptions" EntitySet="FlowMultiOptions" />
+            <End Role="FlowMOInstances" EntitySet="FlowMOInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowMultiOptions_Flows" Association="SimpleFlowModel.Store.FK_FlowMultiOptions_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowMultiOptions" EntitySet="FlowMultiOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Flows_Users" Association="SimpleFlowModel.Store.FK_Flows_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Flows" EntitySet="Flows" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MonitorInstances_Flows" Association="SimpleFlowModel.Store.FK_MonitorInstances_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="MonitorInstances" EntitySet="MonitorInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UseCases_Flows" Association="SimpleFlowModel.Store.FK_UseCases_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="UseCases" EntitySet="UseCases" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ActionInputs">
+          <Key>
+            <PropertyRef Name="InputId" />
+          </Key>
+          <Property Name="InputId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ActionId" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="InputObject" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActionOptions">
+          <Key>
+            <PropertyRef Name="ActionOptionId" />
+          </Key>
+          <Property Name="ActionOptionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ActionId" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="OptionId" Type="int" Nullable="false" />
+          <Property Name="ControlName" Type="varchar(max)" />
+          <Property Name="DefaultValue" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ActionOutputs">
+          <Key>
+            <PropertyRef Name="OutputId" />
+          </Key>
+          <Property Name="OutputId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ActionId" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="OutputObject" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Actions">
+          <Key>
+            <PropertyRef Name="ActionId" />
+          </Key>
+          <Property Name="ActionId" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="ActionName" Type="varchar(max)" Nullable="false" />
+          <Property Name="ActionDescription" Type="varchar(max)" Nullable="false" />
+          <Property Name="ActionType" Type="varchar(max)" Nullable="false" />
+          <Property Name="ActionPosition" Type="int" />
+          <Property Name="ActionPage" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ApplicationInfo">
+          <Key>
+            <PropertyRef Name="ApplicationInfoId" />
+          </Key>
+          <Property Name="ApplicationId" Type="varchar(max)" Nullable="false" />
+          <Property Name="ApplicationSecret" Type="varchar(max)" Nullable="false" />
+          <Property Name="ApplicationURL" Type="varchar(max)" Nullable="false" />
+          <Property Name="RedirectURL" Type="varchar(max)" Nullable="false" />
+          <Property Name="AppUrlSsl" Type="varchar(max)" Nullable="false" />
+          <Property Name="PageId" Type="varchar(max)" />
+          <Property Name="ApplicationAT" Type="varchar(max)" />
+          <Property Name="ATexpiration" Type="varchar(max)" />
+          <Property Name="PageOwnerId" Type="varchar(max)" />
+          <Property Name="ApplicationInfoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Connections">
+          <Key>
+            <PropertyRef Name="ConnectionId" />
+          </Key>
+          <Property Name="ConnectionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ActionFrom" Type="nchar" MaxLength="6" />
+          <Property Name="ActionTo" Type="nchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="FlowActionInputs">
+          <Key>
+            <PropertyRef Name="FlowActInputId" />
+          </Key>
+          <Property Name="FlowActInputId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FlowId" Type="int" Nullable="false" />
+          <Property Name="FlowPosition" Type="int" Nullable="false" />
+          <Property Name="ActionInputId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="FlowActionOptions">
+          <Key>
+            <PropertyRef Name="FlowActOptId" />
+          </Key>
+          <Property Name="FlowActOptId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FlowId" Type="int" Nullable="false" />
+          <Property Name="FlowPosition" Type="int" Nullable="false" />
+          <Property Name="ActionOptionId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="FlowActionOutputs">
+          <Key>
+            <PropertyRef Name="FlowActOutputId" />
+          </Key>
+          <Property Name="FlowActOutputId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FlowId" Type="int" Nullable="false" />
+          <Property Name="FlowPosition" Type="int" Nullable="false" />
+          <Property Name="ActionOutputId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="FlowActions">
+          <Key>
+            <PropertyRef Name="FlowActionId" />
+          </Key>
+          <Property Name="FlowActionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ActionId" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="Position" Type="int" Nullable="false" />
+          <Property Name="FlowId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FlowInstances">
+          <Key>
+            <PropertyRef Name="FlowInstanceId" />
+          </Key>
+          <Property Name="FlowInstanceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CurrentPosition" Type="int" Nullable="false" />
+          <Property Name="CurrentAction" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="FlowId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FlowMOInstances">
+          <Key>
+            <PropertyRef Name="FlowMOInstId" />
+          </Key>
+          <Property Name="FlowMOInstId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FlowInstanceId" Type="int" Nullable="false" />
+          <Property Name="FlowMultiOptId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FlowMultiOptions">
+          <Key>
+            <PropertyRef Name="FlowMultiOptId" />
+          </Key>
+          <Property Name="FlowMultiOptId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FlowId" Type="int" Nullable="false" />
+          <Property Name="FlowPosition" Type="int" Nullable="false" />
+          <Property Name="OptionValue" Type="varchar(max)" Nullable="false" />
+          <Property Name="DocumentUrl" Type="varchar(max)" />
+          <Property Name="DocumentColumn" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Flows">
+          <Key>
+            <PropertyRef Name="FlowId" />
+          </Key>
+          <Property Name="FlowId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="FlowName" Type="varchar(max)" Nullable="false" />
+          <Property Name="FlowUseCaseNumber" Type="int" />
+          <Property Name="FlowStartTime" Type="datetime" />
+          <Property Name="FlowEndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MonitorInstances">
+          <Key>
+            <PropertyRef Name="MonitorInstanceId" />
+          </Key>
+          <Property Name="MonitorInstanceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FlowId" Type="int" Nullable="false" />
+          <Property Name="FlowPosition" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="StartTime" Type="time" Nullable="false" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="EndTime" Type="time" />
+          <Property Name="Frequency" Type="varchar(max)" Nullable="false" />
+          <Property Name="ObjectType" Type="varchar(max)" Nullable="false" />
+          <Property Name="ObjectId" Type="varchar(max)" Nullable="false" />
+          <Property Name="Metric" Type="varchar(max)" Nullable="false" />
+          <Property Name="DestinationType" Type="varchar(max)" Nullable="false" />
+          <Property Name="DestinationUrl" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Options">
+          <Key>
+            <PropertyRef Name="OptionId" />
+          </Key>
+          <Property Name="OptionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OptionName" Type="varchar(max)" Nullable="false" />
+          <Property Name="OptionType" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UseCases">
+          <Key>
+            <PropertyRef Name="UseCaseId" />
+          </Key>
+          <Property Name="UseCaseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UseCaseNumber" Type="int" Nullable="false" />
+          <Property Name="FlowId" Type="int" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="EndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SNUserId" Type="varchar(max)" Nullable="false" />
+          <Property Name="UserName" Type="varchar(max)" Nullable="false" />
+          <Property Name="UserType" Type="varchar(max)" />
+          <Property Name="UserAT" Type="varchar(max)" />
+          <Property Name="UserExpiration" Type="numeric" />
+        </EntityType>
+        <Association Name="FK_ActionInputs_Actions">
+          <End Role="Actions" Type="SimpleFlowModel.Store.Actions" Multiplicity="1" />
+          <End Role="ActionInputs" Type="SimpleFlowModel.Store.ActionInputs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="ActionId" />
+            </Principal>
+            <Dependent Role="ActionInputs">
+              <PropertyRef Name="ActionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActionOptions_Actions">
+          <End Role="Actions" Type="SimpleFlowModel.Store.Actions" Multiplicity="1" />
+          <End Role="ActionOptions" Type="SimpleFlowModel.Store.ActionOptions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="ActionId" />
+            </Principal>
+            <Dependent Role="ActionOptions">
+              <PropertyRef Name="ActionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActionOptions_Options">
+          <End Role="Options" Type="SimpleFlowModel.Store.Options" Multiplicity="1" />
+          <End Role="ActionOptions" Type="SimpleFlowModel.Store.ActionOptions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Options">
+              <PropertyRef Name="OptionId" />
+            </Principal>
+            <Dependent Role="ActionOptions">
+              <PropertyRef Name="OptionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActionOutputs_Actions">
+          <End Role="Actions" Type="SimpleFlowModel.Store.Actions" Multiplicity="1" />
+          <End Role="ActionOutputs" Type="SimpleFlowModel.Store.ActionOutputs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="ActionId" />
+            </Principal>
+            <Dependent Role="ActionOutputs">
+              <PropertyRef Name="ActionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Connections_Actions">
+          <End Role="Actions" Type="SimpleFlowModel.Store.Actions" Multiplicity="0..1" />
+          <End Role="Connections" Type="SimpleFlowModel.Store.Connections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="ActionId" />
+            </Principal>
+            <Dependent Role="Connections">
+              <PropertyRef Name="ActionFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Connections_Actions1">
+          <End Role="Actions" Type="SimpleFlowModel.Store.Actions" Multiplicity="0..1" />
+          <End Role="Connections" Type="SimpleFlowModel.Store.Connections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="ActionId" />
+            </Principal>
+            <Dependent Role="Connections">
+              <PropertyRef Name="ActionTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowActionInputs_ActionInputs">
+          <End Role="ActionInputs" Type="SimpleFlowModel.Store.ActionInputs" Multiplicity="1" />
+          <End Role="FlowActionInputs" Type="SimpleFlowModel.Store.FlowActionInputs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionInputs">
+              <PropertyRef Name="InputId" />
+            </Principal>
+            <Dependent Role="FlowActionInputs">
+              <PropertyRef Name="ActionInputId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowActionInputs_Flows">
+          <End Role="Flows" Type="SimpleFlowModel.Store.Flows" Multiplicity="1" />
+          <End Role="FlowActionInputs" Type="SimpleFlowModel.Store.FlowActionInputs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Flows">
+              <PropertyRef Name="FlowId" />
+            </Principal>
+            <Dependent Role="FlowActionInputs">
+              <PropertyRef Name="FlowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowActionOptions_ActionOptions">
+          <End Role="ActionOptions" Type="SimpleFlowModel.Store.ActionOptions" Multiplicity="1" />
+          <End Role="FlowActionOptions" Type="SimpleFlowModel.Store.FlowActionOptions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionOptions">
+              <PropertyRef Name="ActionOptionId" />
+            </Principal>
+            <Dependent Role="FlowActionOptions">
+              <PropertyRef Name="ActionOptionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowActionOptions_Flows">
+          <End Role="Flows" Type="SimpleFlowModel.Store.Flows" Multiplicity="1" />
+          <End Role="FlowActionOptions" Type="SimpleFlowModel.Store.FlowActionOptions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Flows">
+              <PropertyRef Name="FlowId" />
+            </Principal>
+            <Dependent Role="FlowActionOptions">
+              <PropertyRef Name="FlowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowActionOutputs_ActionOutputs">
+          <End Role="ActionOutputs" Type="SimpleFlowModel.Store.ActionOutputs" Multiplicity="1" />
+          <End Role="FlowActionOutputs" Type="SimpleFlowModel.Store.FlowActionOutputs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionOutputs">
+              <PropertyRef Name="OutputId" />
+            </Principal>
+            <Dependent Role="FlowActionOutputs">
+              <PropertyRef Name="ActionOutputId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowActionOutputs_Flows">
+          <End Role="Flows" Type="SimpleFlowModel.Store.Flows" Multiplicity="1" />
+          <End Role="FlowActionOutputs" Type="SimpleFlowModel.Store.FlowActionOutputs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Flows">
+              <PropertyRef Name="FlowId" />
+            </Principal>
+            <Dependent Role="FlowActionOutputs">
+              <PropertyRef Name="FlowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowActions_Actions">
+          <End Role="Actions" Type="SimpleFlowModel.Store.Actions" Multiplicity="1" />
+          <End Role="FlowActions" Type="SimpleFlowModel.Store.FlowActions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="ActionId" />
+            </Principal>
+            <Dependent Role="FlowActions">
+              <PropertyRef Name="ActionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowActions_Flows">
+          <End Role="Flows" Type="SimpleFlowModel.Store.Flows" Multiplicity="1" />
+          <End Role="FlowActions" Type="SimpleFlowModel.Store.FlowActions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Flows">
+              <PropertyRef Name="FlowId" />
+            </Principal>
+            <Dependent Role="FlowActions">
+              <PropertyRef Name="FlowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowInstances_Actions">
+          <End Role="Actions" Type="SimpleFlowModel.Store.Actions" Multiplicity="1" />
+          <End Role="FlowInstances" Type="SimpleFlowModel.Store.FlowInstances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="ActionId" />
+            </Principal>
+            <Dependent Role="FlowInstances">
+              <PropertyRef Name="CurrentAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowInstances_Flows">
+          <End Role="Flows" Type="SimpleFlowModel.Store.Flows" Multiplicity="1" />
+          <End Role="FlowInstances" Type="SimpleFlowModel.Store.FlowInstances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Flows">
+              <PropertyRef Name="FlowId" />
+            </Principal>
+            <Dependent Role="FlowInstances">
+              <PropertyRef Name="FlowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowInstances_Users">
+          <End Role="Users" Type="SimpleFlowModel.Store.Users" Multiplicity="1" />
+          <End Role="FlowInstances" Type="SimpleFlowModel.Store.FlowInstances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="FlowInstances">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowMOInstances_FlowInstances">
+          <End Role="FlowInstances" Type="SimpleFlowModel.Store.FlowInstances" Multiplicity="1" />
+          <End Role="FlowMOInstances" Type="SimpleFlowModel.Store.FlowMOInstances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FlowInstances">
+              <PropertyRef Name="FlowInstanceId" />
+            </Principal>
+            <Dependent Role="FlowMOInstances">
+              <PropertyRef Name="FlowInstanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowMOInstances_FlowMultiOptions">
+          <End Role="FlowMultiOptions" Type="SimpleFlowModel.Store.FlowMultiOptions" Multiplicity="1" />
+          <End Role="FlowMOInstances" Type="SimpleFlowModel.Store.FlowMOInstances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FlowMultiOptions">
+              <PropertyRef Name="FlowMultiOptId" />
+            </Principal>
+            <Dependent Role="FlowMOInstances">
+              <PropertyRef Name="FlowMultiOptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlowMultiOptions_Flows">
+          <End Role="Flows" Type="SimpleFlowModel.Store.Flows" Multiplicity="1" />
+          <End Role="FlowMultiOptions" Type="SimpleFlowModel.Store.FlowMultiOptions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Flows">
+              <PropertyRef Name="FlowId" />
+            </Principal>
+            <Dependent Role="FlowMultiOptions">
+              <PropertyRef Name="FlowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Flows_Users">
+          <End Role="Users" Type="SimpleFlowModel.Store.Users" Multiplicity="1" />
+          <End Role="Flows" Type="SimpleFlowModel.Store.Flows" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Flows">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MonitorInstances_Flows">
+          <End Role="Flows" Type="SimpleFlowModel.Store.Flows" Multiplicity="1" />
+          <End Role="MonitorInstances" Type="SimpleFlowModel.Store.MonitorInstances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Flows">
+              <PropertyRef Name="FlowId" />
+            </Principal>
+            <Dependent Role="MonitorInstances">
+              <PropertyRef Name="FlowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UseCases_Flows">
+          <End Role="Flows" Type="SimpleFlowModel.Store.Flows" Multiplicity="1" />
+          <End Role="UseCases" Type="SimpleFlowModel.Store.UseCases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Flows">
+              <PropertyRef Name="FlowId" />
+            </Principal>
+            <Dependent Role="UseCases">
+              <PropertyRef Name="FlowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SimpleFlowModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SimpleFlowEntities">
+          <EntitySet Name="ActionInputs" EntityType="SimpleFlowModel.ActionInputs" />
+          <EntitySet Name="ActionOutputs" EntityType="SimpleFlowModel.ActionOutputs" />
+          <EntitySet Name="Actions" EntityType="SimpleFlowModel.Actions" />
+          <EntitySet Name="Connections" EntityType="SimpleFlowModel.Connections" />
+          <EntitySet Name="FlowActions" EntityType="SimpleFlowModel.FlowActions" />
+          <EntitySet Name="Flows" EntityType="SimpleFlowModel.Flows" />
+          <EntitySet Name="Users" EntityType="SimpleFlowModel.Users" />
+          <AssociationSet Name="FK_ActionInputs_Actions" Association="SimpleFlowModel.FK_ActionInputs_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="ActionInputs" EntitySet="ActionInputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActionOutputs_Actions" Association="SimpleFlowModel.FK_ActionOutputs_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="ActionOutputs" EntitySet="ActionOutputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Connections_Actions" Association="SimpleFlowModel.FK_Connections_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="Connections" EntitySet="Connections" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Connections_Actions1" Association="SimpleFlowModel.FK_Connections_Actions1">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="Connections" EntitySet="Connections" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActions_Actions" Association="SimpleFlowModel.FK_FlowActions_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="FlowActions" EntitySet="FlowActions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActions_Flows" Association="SimpleFlowModel.FK_FlowActions_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowActions" EntitySet="FlowActions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Flows_Users" Association="SimpleFlowModel.FK_Flows_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Flows" EntitySet="Flows" />
+          </AssociationSet>
+          <EntitySet Name="FlowInstances" EntityType="SimpleFlowModel.FlowInstances" />
+          <AssociationSet Name="FK_FlowInstances_Actions" Association="SimpleFlowModel.FK_FlowInstances_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="FlowInstances" EntitySet="FlowInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowInstances_Users" Association="SimpleFlowModel.FK_FlowInstances_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="FlowInstances" EntitySet="FlowInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowInstances_Flows" Association="SimpleFlowModel.FK_FlowInstances_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowInstances" EntitySet="FlowInstances" />
+          </AssociationSet>
+          <EntitySet Name="ApplicationInfo" EntityType="SimpleFlowModel.ApplicationInfo" />
+          <EntitySet Name="ActionOptions" EntityType="SimpleFlowModel.ActionOptions" />
+          <EntitySet Name="FlowActionOptions" EntityType="SimpleFlowModel.FlowActionOptions" />
+          <EntitySet Name="FlowMOInstances" EntityType="SimpleFlowModel.FlowMOInstances" />
+          <EntitySet Name="FlowMultiOptions" EntityType="SimpleFlowModel.FlowMultiOptions" />
+          <EntitySet Name="MonitorInstances" EntityType="SimpleFlowModel.MonitorInstances" />
+          <EntitySet Name="Options" EntityType="SimpleFlowModel.Options" />
+          <AssociationSet Name="FK_ActionOptions_Actions" Association="SimpleFlowModel.FK_ActionOptions_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="ActionOptions" EntitySet="ActionOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActionOptions_Options" Association="SimpleFlowModel.FK_ActionOptions_Options">
+            <End Role="Options" EntitySet="Options" />
+            <End Role="ActionOptions" EntitySet="ActionOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionOptions_ActionOptions" Association="SimpleFlowModel.FK_FlowActionOptions_ActionOptions">
+            <End Role="ActionOptions" EntitySet="ActionOptions" />
+            <End Role="FlowActionOptions" EntitySet="FlowActionOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionOptions_Flows" Association="SimpleFlowModel.FK_FlowActionOptions_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowActionOptions" EntitySet="FlowActionOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowMOInstances_FlowInstances" Association="SimpleFlowModel.FK_FlowMOInstances_FlowInstances">
+            <End Role="FlowInstances" EntitySet="FlowInstances" />
+            <End Role="FlowMOInstances" EntitySet="FlowMOInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowMOInstances_FlowMultiOptions" Association="SimpleFlowModel.FK_FlowMOInstances_FlowMultiOptions">
+            <End Role="FlowMultiOptions" EntitySet="FlowMultiOptions" />
+            <End Role="FlowMOInstances" EntitySet="FlowMOInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowMultiOptions_Flows" Association="SimpleFlowModel.FK_FlowMultiOptions_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowMultiOptions" EntitySet="FlowMultiOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MonitorInstances_Flows" Association="SimpleFlowModel.FK_MonitorInstances_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="MonitorInstances" EntitySet="MonitorInstances" />
+          </AssociationSet>
+          <EntitySet Name="FlowActionInputs" EntityType="SimpleFlowModel.FlowActionInputs" />
+          <EntitySet Name="FlowActionOutputs" EntityType="SimpleFlowModel.FlowActionOutputs" />
+          <AssociationSet Name="FK_FlowActionInputs_ActionInputs" Association="SimpleFlowModel.FK_FlowActionInputs_ActionInputs">
+            <End Role="ActionInputs" EntitySet="ActionInputs" />
+            <End Role="FlowActionInputs" EntitySet="FlowActionInputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionOutputs_ActionOutputs" Association="SimpleFlowModel.FK_FlowActionOutputs_ActionOutputs">
+            <End Role="ActionOutputs" EntitySet="ActionOutputs" />
+            <End Role="FlowActionOutputs" EntitySet="FlowActionOutputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionInputs_Flows" Association="SimpleFlowModel.FK_FlowActionInputs_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowActionInputs" EntitySet="FlowActionInputs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlowActionOutputs_Flows" Association="SimpleFlowModel.FK_FlowActionOutputs_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="FlowActionOutputs" EntitySet="FlowActionOutputs" />
+          </AssociationSet>
+          <EntitySet Name="UseCases" EntityType="SimpleFlowModel.UseCases" />
+          <AssociationSet Name="FK_UseCases_Flows" Association="SimpleFlowModel.FK_UseCases_Flows">
+            <End Role="Flows" EntitySet="Flows" />
+            <End Role="UseCases" EntitySet="UseCases" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ActionInputs">
+          <Key>
+            <PropertyRef Name="InputId" />
+          </Key>
+          <Property Name="InputId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="InputObject" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Actions" Relationship="SimpleFlowModel.FK_ActionInputs_Actions" FromRole="ActionInputs" ToRole="Actions" />
+          <NavigationProperty Name="FlowActionInputs" Relationship="SimpleFlowModel.FK_FlowActionInputs_ActionInputs" FromRole="ActionInputs" ToRole="FlowActionInputs" />
+        </EntityType>
+        <EntityType Name="ActionOutputs">
+          <Key>
+            <PropertyRef Name="OutputId" />
+          </Key>
+          <Property Name="OutputId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="OutputObject" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Actions" Relationship="SimpleFlowModel.FK_ActionOutputs_Actions" FromRole="ActionOutputs" ToRole="Actions" />
+          <NavigationProperty Name="FlowActionOutputs" Relationship="SimpleFlowModel.FK_FlowActionOutputs_ActionOutputs" FromRole="ActionOutputs" ToRole="FlowActionOutputs" />
+        </EntityType>
+        <EntityType Name="Actions">
+          <Key>
+            <PropertyRef Name="ActionId" />
+          </Key>
+          <Property Name="ActionId" Type="String" Nullable="false" MaxLength="6" Unicode="true" FixedLength="true" />
+          <Property Name="ActionName" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ActionDescription" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ActionType" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ActionPosition" Type="Int32" />
+          <NavigationProperty Name="ActionInputs" Relationship="SimpleFlowModel.FK_ActionInputs_Actions" FromRole="Actions" ToRole="ActionInputs" />
+          <NavigationProperty Name="ActionOutputs" Relationship="SimpleFlowModel.FK_ActionOutputs_Actions" FromRole="Actions" ToRole="ActionOutputs" />
+          <NavigationProperty Name="Connections" Relationship="SimpleFlowModel.FK_Connections_Actions" FromRole="Actions" ToRole="Connections" />
+          <NavigationProperty Name="Connections1" Relationship="SimpleFlowModel.FK_Connections_Actions1" FromRole="Actions" ToRole="Connections" />
+          <NavigationProperty Name="FlowActions" Relationship="SimpleFlowModel.FK_FlowActions_Actions" FromRole="Actions" ToRole="FlowActions" />
+          <Property Type="String" Name="ActionPage" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FlowInstances" Relationship="SimpleFlowModel.FK_FlowInstances_Actions" FromRole="Actions" ToRole="FlowInstances" />
+          <NavigationProperty Name="ActionOptions" Relationship="SimpleFlowModel.FK_ActionOptions_Actions" FromRole="Actions" ToRole="ActionOptions" />
+        </EntityType>
+        <EntityType Name="Connections">
+          <Key>
+            <PropertyRef Name="ConnectionId" />
+          </Key>
+          <Property Name="ConnectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="Actions" Relationship="SimpleFlowModel.FK_Connections_Actions" FromRole="Connections" ToRole="Actions" />
+          <NavigationProperty Name="Actions1" Relationship="SimpleFlowModel.FK_Connections_Actions1" FromRole="Connections" ToRole="Actions" />
+        </EntityType>
+        <EntityType Name="FlowActions">
+          <Key>
+            <PropertyRef Name="FlowActionId" />
+          </Key>
+          <Property Name="FlowActionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Position" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Actions" Relationship="SimpleFlowModel.FK_FlowActions_Actions" FromRole="FlowActions" ToRole="Actions" />
+          <NavigationProperty Name="Flows" Relationship="SimpleFlowModel.FK_FlowActions_Flows" FromRole="FlowActions" ToRole="Flows" />
+        </EntityType>
+        <EntityType Name="Flows">
+          <Key>
+            <PropertyRef Name="FlowId" />
+          </Key>
+          <Property Name="FlowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FlowName" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FlowActions" Relationship="SimpleFlowModel.FK_FlowActions_Flows" FromRole="Flows" ToRole="FlowActions" />
+          <NavigationProperty Name="Users" Relationship="SimpleFlowModel.FK_Flows_Users" FromRole="Flows" ToRole="Users" />
+          <NavigationProperty Name="FlowInstances" Relationship="SimpleFlowModel.FK_FlowInstances_Flows" FromRole="Flows" ToRole="FlowInstances" />
+          <NavigationProperty Name="FlowActionOptions" Relationship="SimpleFlowModel.FK_FlowActionOptions_Flows" FromRole="Flows" ToRole="FlowActionOptions" />
+          <NavigationProperty Name="FlowMultiOptions" Relationship="SimpleFlowModel.FK_FlowMultiOptions_Flows" FromRole="Flows" ToRole="FlowMultiOptions" />
+          <NavigationProperty Name="MonitorInstances" Relationship="SimpleFlowModel.FK_MonitorInstances_Flows" FromRole="Flows" ToRole="MonitorInstances" />
+          <NavigationProperty Name="FlowActionInputs" Relationship="SimpleFlowModel.FK_FlowActionInputs_Flows" FromRole="Flows" ToRole="FlowActionInputs" />
+          <NavigationProperty Name="FlowActionOutputs" Relationship="SimpleFlowModel.FK_FlowActionOutputs_Flows" FromRole="Flows" ToRole="FlowActionOutputs" />
+          <NavigationProperty Name="UseCases" Relationship="SimpleFlowModel.FK_UseCases_Flows" FromRole="Flows" ToRole="UseCases" />
+          <Property Type="Int32" Name="FlowUseCaseNumber" />
+          <Property Type="DateTime" Name="FlowStartTime" />
+          <Property Type="DateTime" Name="FlowEndTime" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="SNUserId" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Flows" Relationship="SimpleFlowModel.FK_Flows_Users" FromRole="Users" ToRole="Flows" />
+          <NavigationProperty Name="FlowInstances" Relationship="SimpleFlowModel.FK_FlowInstances_Users" FromRole="Users" ToRole="FlowInstances" />
+          <Property Type="String" Name="UserType" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserAT" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="UserExpiration" Precision="18" Scale="0" />
+        </EntityType>
+        <Association Name="FK_ActionInputs_Actions">
+          <End Role="Actions" Type="SimpleFlowModel.Actions" Multiplicity="1" />
+          <End Role="ActionInputs" Type="SimpleFlowModel.ActionInputs" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ActionOutputs_Actions">
+          <End Role="Actions" Type="SimpleFlowModel.Actions" Multiplicity="1" />
+          <End Role="ActionOutputs" Type="SimpleFlowModel.ActionOutputs" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Connections_Actions">
+          <End Role="Actions" Type="SimpleFlowModel.Actions" Multiplicity="0..1" />
+          <End Role="Connections" Type="SimpleFlowModel.Connections" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Connections_Actions1">
+          <End Role="Actions" Type="SimpleFlowModel.Actions" Multiplicity="0..1" />
+          <End Role="Connections" Type="SimpleFlowModel.Connections" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowActions_Actions">
+          <End Role="Actions" Type="SimpleFlowModel.Actions" Multiplicity="1" />
+          <End Role="FlowActions" Type="SimpleFlowModel.FlowActions" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowActions_Flows">
+          <End Role="Flows" Type="SimpleFlowModel.Flows" Multiplicity="1" />
+          <End Role="FlowActions" Type="SimpleFlowModel.FlowActions" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Flows_Users">
+          <End Role="Users" Type="SimpleFlowModel.Users" Multiplicity="1" />
+          <End Role="Flows" Type="SimpleFlowModel.Flows" Multiplicity="*" />
+        </Association>
+        <EntityType Name="FlowInstances">
+          <Key>
+            <PropertyRef Name="FlowInstanceId" />
+          </Key>
+          <Property Type="Int32" Name="FlowInstanceId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="CurrentPosition" Nullable="false" />
+          <NavigationProperty Name="Actions" Relationship="SimpleFlowModel.FK_FlowInstances_Actions" FromRole="FlowInstances" ToRole="Actions" />
+          <NavigationProperty Name="Users" Relationship="SimpleFlowModel.FK_FlowInstances_Users" FromRole="FlowInstances" ToRole="Users" />
+          <NavigationProperty Name="Flows" Relationship="SimpleFlowModel.FK_FlowInstances_Flows" FromRole="FlowInstances" ToRole="Flows" />
+          <NavigationProperty Name="FlowMOInstances" Relationship="SimpleFlowModel.FK_FlowMOInstances_FlowInstances" FromRole="FlowInstances" ToRole="FlowMOInstances" />
+        </EntityType>
+        <Association Name="FK_FlowInstances_Actions">
+          <End Type="SimpleFlowModel.Actions" Role="Actions" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowInstances" Role="FlowInstances" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowInstances_Users">
+          <End Type="SimpleFlowModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowInstances" Role="FlowInstances" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowInstances_Flows">
+          <End Type="SimpleFlowModel.Flows" Role="Flows" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowInstances" Role="FlowInstances" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ApplicationInfo">
+          <Key>
+            <PropertyRef Name="ApplicationInfoId" />
+          </Key>
+          <Property Type="String" Name="ApplicationId" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApplicationSecret" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApplicationURL" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RedirectURL" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AppUrlSsl" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PageId" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApplicationAT" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ATexpiration" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PageOwnerId" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ApplicationInfoId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        </EntityType>
+        <EntityType Name="ActionOptions">
+          <Key>
+            <PropertyRef Name="ActionOptionId" />
+          </Key>
+          <Property Type="Int32" Name="ActionOptionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="Actions" Relationship="SimpleFlowModel.FK_ActionOptions_Actions" FromRole="ActionOptions" ToRole="Actions" />
+          <NavigationProperty Name="Options" Relationship="SimpleFlowModel.FK_ActionOptions_Options" FromRole="ActionOptions" ToRole="Options" />
+          <NavigationProperty Name="FlowActionOptions" Relationship="SimpleFlowModel.FK_FlowActionOptions_ActionOptions" FromRole="ActionOptions" ToRole="FlowActionOptions" />
+          <Property Type="String" Name="ControlName" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DefaultValue" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FlowActionOptions">
+          <Key>
+            <PropertyRef Name="FlowActOptId" />
+          </Key>
+          <Property Type="Int32" Name="FlowActOptId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="FlowPosition" Nullable="false" />
+          <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ActionOptions" Relationship="SimpleFlowModel.FK_FlowActionOptions_ActionOptions" FromRole="FlowActionOptions" ToRole="ActionOptions" />
+          <NavigationProperty Name="Flows" Relationship="SimpleFlowModel.FK_FlowActionOptions_Flows" FromRole="FlowActionOptions" ToRole="Flows" />
+        </EntityType>
+        <EntityType Name="FlowMOInstances">
+          <Key>
+            <PropertyRef Name="FlowMOInstId" />
+          </Key>
+          <Property Type="Int32" Name="FlowMOInstId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="FlowInstances" Relationship="SimpleFlowModel.FK_FlowMOInstances_FlowInstances" FromRole="FlowMOInstances" ToRole="FlowInstances" />
+          <NavigationProperty Name="FlowMultiOptions" Relationship="SimpleFlowModel.FK_FlowMOInstances_FlowMultiOptions" FromRole="FlowMOInstances" ToRole="FlowMultiOptions" />
+        </EntityType>
+        <EntityType Name="FlowMultiOptions">
+          <Key>
+            <PropertyRef Name="FlowMultiOptId" />
+          </Key>
+          <Property Type="Int32" Name="FlowMultiOptId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="FlowPosition" Nullable="false" />
+          <Property Type="String" Name="OptionValue" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DocumentUrl" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DocumentColumn" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FlowMOInstances" Relationship="SimpleFlowModel.FK_FlowMOInstances_FlowMultiOptions" FromRole="FlowMultiOptions" ToRole="FlowMOInstances" />
+          <NavigationProperty Name="Flows" Relationship="SimpleFlowModel.FK_FlowMultiOptions_Flows" FromRole="FlowMultiOptions" ToRole="Flows" />
+        </EntityType>
+        <EntityType Name="MonitorInstances">
+          <Key>
+            <PropertyRef Name="MonitorInstanceId" />
+          </Key>
+          <Property Type="Int32" Name="MonitorInstanceId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="FlowPosition" Nullable="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" />
+          <Property Type="Time" Name="StartTime" Nullable="false" />
+          <Property Type="DateTime" Name="EndDate" />
+          <Property Type="Time" Name="EndTime" />
+          <Property Type="String" Name="Frequency" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ObjectType" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ObjectId" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Metric" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DestinationType" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DestinationUrl" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Flows" Relationship="SimpleFlowModel.FK_MonitorInstances_Flows" FromRole="MonitorInstances" ToRole="Flows" />
+        </EntityType>
+        <EntityType Name="Options">
+          <Key>
+            <PropertyRef Name="OptionId" />
+          </Key>
+          <Property Type="Int32" Name="OptionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="OptionName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OptionType" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ActionOptions" Relationship="SimpleFlowModel.FK_ActionOptions_Options" FromRole="Options" ToRole="ActionOptions" />
+        </EntityType>
+        <Association Name="FK_ActionOptions_Actions">
+          <End Type="SimpleFlowModel.Actions" Role="Actions" Multiplicity="1" />
+          <End Type="SimpleFlowModel.ActionOptions" Role="ActionOptions" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ActionOptions_Options">
+          <End Type="SimpleFlowModel.Options" Role="Options" Multiplicity="1" />
+          <End Type="SimpleFlowModel.ActionOptions" Role="ActionOptions" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowActionOptions_ActionOptions">
+          <End Type="SimpleFlowModel.ActionOptions" Role="ActionOptions" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowActionOptions" Role="FlowActionOptions" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowActionOptions_Flows">
+          <End Type="SimpleFlowModel.Flows" Role="Flows" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowActionOptions" Role="FlowActionOptions" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowMOInstances_FlowInstances">
+          <End Type="SimpleFlowModel.FlowInstances" Role="FlowInstances" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowMOInstances" Role="FlowMOInstances" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowMOInstances_FlowMultiOptions">
+          <End Type="SimpleFlowModel.FlowMultiOptions" Role="FlowMultiOptions" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowMOInstances" Role="FlowMOInstances" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowMultiOptions_Flows">
+          <End Type="SimpleFlowModel.Flows" Role="Flows" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowMultiOptions" Role="FlowMultiOptions" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_MonitorInstances_Flows">
+          <End Type="SimpleFlowModel.Flows" Role="Flows" Multiplicity="1" />
+          <End Type="SimpleFlowModel.MonitorInstances" Role="MonitorInstances" Multiplicity="*" />
+        </Association>
+        <EntityType Name="FlowActionInputs">
+          <Key>
+            <PropertyRef Name="FlowActInputId" />
+          </Key>
+          <Property Type="Int32" Name="FlowActInputId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="FlowPosition" Nullable="false" />
+          <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ActionInputs" Relationship="SimpleFlowModel.FK_FlowActionInputs_ActionInputs" FromRole="FlowActionInputs" ToRole="ActionInputs" />
+          <NavigationProperty Name="Flows" Relationship="SimpleFlowModel.FK_FlowActionInputs_Flows" FromRole="FlowActionInputs" ToRole="Flows" />
+        </EntityType>
+        <EntityType Name="FlowActionOutputs">
+          <Key>
+            <PropertyRef Name="FlowActOutputId" />
+          </Key>
+          <Property Type="Int32" Name="FlowActOutputId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="FlowPosition" Nullable="false" />
+          <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ActionOutputs" Relationship="SimpleFlowModel.FK_FlowActionOutputs_ActionOutputs" FromRole="FlowActionOutputs" ToRole="ActionOutputs" />
+          <NavigationProperty Name="Flows" Relationship="SimpleFlowModel.FK_FlowActionOutputs_Flows" FromRole="FlowActionOutputs" ToRole="Flows" />
+        </EntityType>
+        <Association Name="FK_FlowActionInputs_ActionInputs">
+          <End Type="SimpleFlowModel.ActionInputs" Role="ActionInputs" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowActionInputs" Role="FlowActionInputs" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowActionOutputs_ActionOutputs">
+          <End Type="SimpleFlowModel.ActionOutputs" Role="ActionOutputs" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowActionOutputs" Role="FlowActionOutputs" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowActionInputs_Flows">
+          <End Type="SimpleFlowModel.Flows" Role="Flows" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowActionInputs" Role="FlowActionInputs" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FlowActionOutputs_Flows">
+          <End Type="SimpleFlowModel.Flows" Role="Flows" Multiplicity="1" />
+          <End Type="SimpleFlowModel.FlowActionOutputs" Role="FlowActionOutputs" Multiplicity="*" />
+        </Association>
+        <EntityType Name="UseCases">
+          <Key>
+            <PropertyRef Name="UseCaseId" />
+          </Key>
+          <Property Type="Int32" Name="UseCaseId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="UseCaseNumber" Nullable="false" />
+          <Property Type="DateTime" Name="StartTime" />
+          <Property Type="DateTime" Name="EndTime" />
+          <NavigationProperty Name="Flows" Relationship="SimpleFlowModel.FK_UseCases_Flows" FromRole="UseCases" ToRole="Flows" />
+        </EntityType>
+        <Association Name="FK_UseCases_Flows">
+          <End Type="SimpleFlowModel.Flows" Role="Flows" Multiplicity="1" />
+          <End Type="SimpleFlowModel.UseCases" Role="UseCases" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SimpleFlowModelStoreContainer" CdmEntityContainer="SimpleFlowEntities">
+          <EntitySetMapping Name="ActionInputs"><EntityTypeMapping TypeName="SimpleFlowModel.ActionInputs"><MappingFragment StoreEntitySet="ActionInputs">
+            <ScalarProperty Name="InputId" ColumnName="InputId" />
+            <ScalarProperty Name="InputObject" ColumnName="InputObject" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ActionOutputs"><EntityTypeMapping TypeName="SimpleFlowModel.ActionOutputs"><MappingFragment StoreEntitySet="ActionOutputs">
+            <ScalarProperty Name="OutputId" ColumnName="OutputId" />
+            <ScalarProperty Name="OutputObject" ColumnName="OutputObject" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Actions"><EntityTypeMapping TypeName="SimpleFlowModel.Actions"><MappingFragment StoreEntitySet="Actions">
+            <ScalarProperty Name="ActionPage" ColumnName="ActionPage" />
+                <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+            <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+            <ScalarProperty Name="ActionDescription" ColumnName="ActionDescription" />
+            <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+            <ScalarProperty Name="ActionPosition" ColumnName="ActionPosition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Connections"><EntityTypeMapping TypeName="SimpleFlowModel.Connections"><MappingFragment StoreEntitySet="Connections">
+            <ScalarProperty Name="ConnectionId" ColumnName="ConnectionId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FlowActions"><EntityTypeMapping TypeName="SimpleFlowModel.FlowActions"><MappingFragment StoreEntitySet="FlowActions">
+            <ScalarProperty Name="FlowActionId" ColumnName="FlowActionId" />
+            <ScalarProperty Name="Position" ColumnName="Position" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Flows"><EntityTypeMapping TypeName="SimpleFlowModel.Flows"><MappingFragment StoreEntitySet="Flows">
+            <ScalarProperty Name="FlowEndTime" ColumnName="FlowEndTime" />
+                <ScalarProperty Name="FlowStartTime" ColumnName="FlowStartTime" />
+                <ScalarProperty Name="FlowUseCaseNumber" ColumnName="FlowUseCaseNumber" />
+                <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+            <ScalarProperty Name="FlowName" ColumnName="FlowName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="SimpleFlowModel.Users"><MappingFragment StoreEntitySet="Users">
+            <ScalarProperty Name="UserExpiration" ColumnName="UserExpiration" />
+                <ScalarProperty Name="UserAT" ColumnName="UserAT" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="SNUserId" ColumnName="SNUserId" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_ActionInputs_Actions" TypeName="SimpleFlowModel.FK_ActionInputs_Actions" StoreEntitySet="ActionInputs">
+            <EndProperty Name="Actions">
+              <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+            </EndProperty>
+            <EndProperty Name="ActionInputs">
+              <ScalarProperty Name="InputId" ColumnName="InputId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ActionOutputs_Actions" TypeName="SimpleFlowModel.FK_ActionOutputs_Actions" StoreEntitySet="ActionOutputs">
+            <EndProperty Name="Actions">
+              <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+            </EndProperty>
+            <EndProperty Name="ActionOutputs">
+              <ScalarProperty Name="OutputId" ColumnName="OutputId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Connections_Actions" TypeName="SimpleFlowModel.FK_Connections_Actions" StoreEntitySet="Connections">
+            <EndProperty Name="Actions">
+              <ScalarProperty Name="ActionId" ColumnName="ActionFrom" />
+            </EndProperty>
+            <EndProperty Name="Connections">
+              <ScalarProperty Name="ConnectionId" ColumnName="ConnectionId" />
+            </EndProperty>
+            <Condition ColumnName="ActionFrom" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Connections_Actions1" TypeName="SimpleFlowModel.FK_Connections_Actions1" StoreEntitySet="Connections">
+            <EndProperty Name="Actions">
+              <ScalarProperty Name="ActionId" ColumnName="ActionTo" />
+            </EndProperty>
+            <EndProperty Name="Connections">
+              <ScalarProperty Name="ConnectionId" ColumnName="ConnectionId" />
+            </EndProperty>
+            <Condition ColumnName="ActionTo" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowActions_Actions" TypeName="SimpleFlowModel.FK_FlowActions_Actions" StoreEntitySet="FlowActions">
+            <EndProperty Name="Actions">
+              <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+            </EndProperty>
+            <EndProperty Name="FlowActions">
+              <ScalarProperty Name="FlowActionId" ColumnName="FlowActionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowActions_Flows" TypeName="SimpleFlowModel.FK_FlowActions_Flows" StoreEntitySet="FlowActions">
+            <EndProperty Name="Flows">
+              <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+            </EndProperty>
+            <EndProperty Name="FlowActions">
+              <ScalarProperty Name="FlowActionId" ColumnName="FlowActionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Flows_Users" TypeName="SimpleFlowModel.FK_Flows_Users" StoreEntitySet="Flows">
+            <EndProperty Name="Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="Flows">
+              <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="FlowInstances">
+            <EntityTypeMapping TypeName="SimpleFlowModel.FlowInstances">
+              <MappingFragment StoreEntitySet="FlowInstances">
+                <ScalarProperty Name="CurrentPosition" ColumnName="CurrentPosition" />
+                <ScalarProperty Name="FlowInstanceId" ColumnName="FlowInstanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_FlowInstances_Actions" TypeName="SimpleFlowModel.FK_FlowInstances_Actions" StoreEntitySet="FlowInstances">
+            <EndProperty Name="FlowInstances">
+              <ScalarProperty Name="FlowInstanceId" ColumnName="FlowInstanceId" />
+            </EndProperty>
+            <EndProperty Name="Actions">
+              <ScalarProperty Name="ActionId" ColumnName="CurrentAction" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowInstances_Users" TypeName="SimpleFlowModel.FK_FlowInstances_Users" StoreEntitySet="FlowInstances">
+            <EndProperty Name="FlowInstances">
+              <ScalarProperty Name="FlowInstanceId" ColumnName="FlowInstanceId" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowInstances_Flows" TypeName="SimpleFlowModel.FK_FlowInstances_Flows" StoreEntitySet="FlowInstances">
+            <EndProperty Name="FlowInstances">
+              <ScalarProperty Name="FlowInstanceId" ColumnName="FlowInstanceId" />
+            </EndProperty>
+            <EndProperty Name="Flows">
+              <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="ApplicationInfo">
+            <EntityTypeMapping TypeName="SimpleFlowModel.ApplicationInfo">
+              <MappingFragment StoreEntitySet="ApplicationInfo">
+                <ScalarProperty Name="ApplicationInfoId" ColumnName="ApplicationInfoId" />
+                <ScalarProperty Name="PageOwnerId" ColumnName="PageOwnerId" />
+                <ScalarProperty Name="ATexpiration" ColumnName="ATexpiration" />
+                <ScalarProperty Name="ApplicationAT" ColumnName="ApplicationAT" />
+                <ScalarProperty Name="PageId" ColumnName="PageId" />
+                <ScalarProperty Name="AppUrlSsl" ColumnName="AppUrlSsl" />
+                <ScalarProperty Name="RedirectURL" ColumnName="RedirectURL" />
+                <ScalarProperty Name="ApplicationURL" ColumnName="ApplicationURL" />
+                <ScalarProperty Name="ApplicationSecret" ColumnName="ApplicationSecret" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActionOptions">
+            <EntityTypeMapping TypeName="SimpleFlowModel.ActionOptions">
+              <MappingFragment StoreEntitySet="ActionOptions">
+                <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+                <ScalarProperty Name="ControlName" ColumnName="ControlName" />
+                <ScalarProperty Name="ActionOptionId" ColumnName="ActionOptionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlowActionOptions">
+            <EntityTypeMapping TypeName="SimpleFlowModel.FlowActionOptions">
+              <MappingFragment StoreEntitySet="FlowActionOptions">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="FlowPosition" ColumnName="FlowPosition" />
+                <ScalarProperty Name="FlowActOptId" ColumnName="FlowActOptId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlowMOInstances">
+            <EntityTypeMapping TypeName="SimpleFlowModel.FlowMOInstances">
+              <MappingFragment StoreEntitySet="FlowMOInstances">
+                <ScalarProperty Name="FlowMOInstId" ColumnName="FlowMOInstId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlowMultiOptions">
+            <EntityTypeMapping TypeName="SimpleFlowModel.FlowMultiOptions">
+              <MappingFragment StoreEntitySet="FlowMultiOptions">
+                <ScalarProperty Name="DocumentColumn" ColumnName="DocumentColumn" />
+                <ScalarProperty Name="DocumentUrl" ColumnName="DocumentUrl" />
+                <ScalarProperty Name="OptionValue" ColumnName="OptionValue" />
+                <ScalarProperty Name="FlowPosition" ColumnName="FlowPosition" />
+                <ScalarProperty Name="FlowMultiOptId" ColumnName="FlowMultiOptId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MonitorInstances">
+            <EntityTypeMapping TypeName="SimpleFlowModel.MonitorInstances">
+              <MappingFragment StoreEntitySet="MonitorInstances">
+                <ScalarProperty Name="DestinationUrl" ColumnName="DestinationUrl" />
+                <ScalarProperty Name="DestinationType" ColumnName="DestinationType" />
+                <ScalarProperty Name="Metric" ColumnName="Metric" />
+                <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="FlowPosition" ColumnName="FlowPosition" />
+                <ScalarProperty Name="MonitorInstanceId" ColumnName="MonitorInstanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Options">
+            <EntityTypeMapping TypeName="SimpleFlowModel.Options">
+              <MappingFragment StoreEntitySet="Options">
+                <ScalarProperty Name="OptionType" ColumnName="OptionType" />
+                <ScalarProperty Name="OptionName" ColumnName="OptionName" />
+                <ScalarProperty Name="OptionId" ColumnName="OptionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_ActionOptions_Actions" TypeName="SimpleFlowModel.FK_ActionOptions_Actions" StoreEntitySet="ActionOptions">
+            <EndProperty Name="ActionOptions">
+              <ScalarProperty Name="ActionOptionId" ColumnName="ActionOptionId" />
+            </EndProperty>
+            <EndProperty Name="Actions">
+              <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ActionOptions_Options" TypeName="SimpleFlowModel.FK_ActionOptions_Options" StoreEntitySet="ActionOptions">
+            <EndProperty Name="ActionOptions">
+              <ScalarProperty Name="ActionOptionId" ColumnName="ActionOptionId" />
+            </EndProperty>
+            <EndProperty Name="Options">
+              <ScalarProperty Name="OptionId" ColumnName="OptionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowActionOptions_ActionOptions" TypeName="SimpleFlowModel.FK_FlowActionOptions_ActionOptions" StoreEntitySet="FlowActionOptions">
+            <EndProperty Name="FlowActionOptions">
+              <ScalarProperty Name="FlowActOptId" ColumnName="FlowActOptId" />
+            </EndProperty>
+            <EndProperty Name="ActionOptions">
+              <ScalarProperty Name="ActionOptionId" ColumnName="ActionOptionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowActionOptions_Flows" TypeName="SimpleFlowModel.FK_FlowActionOptions_Flows" StoreEntitySet="FlowActionOptions">
+            <EndProperty Name="FlowActionOptions">
+              <ScalarProperty Name="FlowActOptId" ColumnName="FlowActOptId" />
+            </EndProperty>
+            <EndProperty Name="Flows">
+              <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowMOInstances_FlowInstances" TypeName="SimpleFlowModel.FK_FlowMOInstances_FlowInstances" StoreEntitySet="FlowMOInstances">
+            <EndProperty Name="FlowMOInstances">
+              <ScalarProperty Name="FlowMOInstId" ColumnName="FlowMOInstId" />
+            </EndProperty>
+            <EndProperty Name="FlowInstances">
+              <ScalarProperty Name="FlowInstanceId" ColumnName="FlowInstanceId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowMOInstances_FlowMultiOptions" TypeName="SimpleFlowModel.FK_FlowMOInstances_FlowMultiOptions" StoreEntitySet="FlowMOInstances">
+            <EndProperty Name="FlowMOInstances">
+              <ScalarProperty Name="FlowMOInstId" ColumnName="FlowMOInstId" />
+            </EndProperty>
+            <EndProperty Name="FlowMultiOptions">
+              <ScalarProperty Name="FlowMultiOptId" ColumnName="FlowMultiOptId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowMultiOptions_Flows" TypeName="SimpleFlowModel.FK_FlowMultiOptions_Flows" StoreEntitySet="FlowMultiOptions">
+            <EndProperty Name="FlowMultiOptions">
+              <ScalarProperty Name="FlowMultiOptId" ColumnName="FlowMultiOptId" />
+            </EndProperty>
+            <EndProperty Name="Flows">
+              <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_MonitorInstances_Flows" TypeName="SimpleFlowModel.FK_MonitorInstances_Flows" StoreEntitySet="MonitorInstances">
+            <EndProperty Name="MonitorInstances">
+              <ScalarProperty Name="MonitorInstanceId" ColumnName="MonitorInstanceId" />
+            </EndProperty>
+            <EndProperty Name="Flows">
+              <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="FlowActionInputs">
+            <EntityTypeMapping TypeName="SimpleFlowModel.FlowActionInputs">
+              <MappingFragment StoreEntitySet="FlowActionInputs">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="FlowPosition" ColumnName="FlowPosition" />
+                <ScalarProperty Name="FlowActInputId" ColumnName="FlowActInputId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlowActionOutputs">
+            <EntityTypeMapping TypeName="SimpleFlowModel.FlowActionOutputs">
+              <MappingFragment StoreEntitySet="FlowActionOutputs">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="FlowPosition" ColumnName="FlowPosition" />
+                <ScalarProperty Name="FlowActOutputId" ColumnName="FlowActOutputId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_FlowActionInputs_ActionInputs" TypeName="SimpleFlowModel.FK_FlowActionInputs_ActionInputs" StoreEntitySet="FlowActionInputs">
+            <EndProperty Name="FlowActionInputs">
+              <ScalarProperty Name="FlowActInputId" ColumnName="FlowActInputId" />
+            </EndProperty>
+            <EndProperty Name="ActionInputs">
+              <ScalarProperty Name="InputId" ColumnName="ActionInputId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowActionOutputs_ActionOutputs" TypeName="SimpleFlowModel.FK_FlowActionOutputs_ActionOutputs" StoreEntitySet="FlowActionOutputs">
+            <EndProperty Name="FlowActionOutputs">
+              <ScalarProperty Name="FlowActOutputId" ColumnName="FlowActOutputId" />
+            </EndProperty>
+            <EndProperty Name="ActionOutputs">
+              <ScalarProperty Name="OutputId" ColumnName="ActionOutputId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowActionInputs_Flows" TypeName="SimpleFlowModel.FK_FlowActionInputs_Flows" StoreEntitySet="FlowActionInputs">
+            <EndProperty Name="FlowActionInputs">
+              <ScalarProperty Name="FlowActInputId" ColumnName="FlowActInputId" />
+            </EndProperty>
+            <EndProperty Name="Flows">
+              <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FlowActionOutputs_Flows" TypeName="SimpleFlowModel.FK_FlowActionOutputs_Flows" StoreEntitySet="FlowActionOutputs">
+            <EndProperty Name="FlowActionOutputs">
+              <ScalarProperty Name="FlowActOutputId" ColumnName="FlowActOutputId" />
+            </EndProperty>
+            <EndProperty Name="Flows">
+              <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="UseCases">
+            <EntityTypeMapping TypeName="SimpleFlowModel.UseCases">
+              <MappingFragment StoreEntitySet="UseCases">
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="UseCaseNumber" ColumnName="UseCaseNumber" />
+                <ScalarProperty Name="UseCaseId" ColumnName="UseCaseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_UseCases_Flows" TypeName="SimpleFlowModel.FK_UseCases_Flows" StoreEntitySet="UseCases">
+            <EndProperty Name="UseCases">
+              <ScalarProperty Name="UseCaseId" ColumnName="UseCaseId" />
+            </EndProperty>
+            <EndProperty Name="Flows">
+              <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SimpleFlowModel">
+        <EntityTypeShape EntityType="SimpleFlowModel.ActionInputs" Width="1.5" PointX="3" PointY="4.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimpleFlowModel.ActionOutputs" Width="1.5" PointX="3" PointY="6.375" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimpleFlowModel.Actions" Width="1.5" PointX="0.75" PointY="5.75" Height="2.9417936197916665" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimpleFlowModel.Connections" Width="1.5" PointX="3" PointY="8.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimpleFlowModel.FlowActions" Width="1.5" PointX="6" PointY="6.375" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimpleFlowModel.Flows" Width="1.5" PointX="3.75" PointY="1.375" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimpleFlowModel.Users" Width="1.5" PointX="1.5" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="SimpleFlowModel.FK_ActionInputs_Actions" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="5.75" />
+          <ConnectorPoint PointX="1.5" PointY="4.9374994999999995" />
+          <ConnectorPoint PointX="3" PointY="4.9374994999999995" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_ActionOutputs_Actions" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.2689925130208328" />
+          <ConnectorPoint PointX="3" PointY="7.2689925130208328" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_Connections_Actions" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.0959757794701446" />
+          <ConnectorPoint PointX="3" PointY="9.0959757794701446" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_Connections_Actions1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.8604878897350723" />
+          <ConnectorPoint PointX="3" PointY="8.8604878897350723" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowActions_Actions" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.4252430130208324" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="8.4252430130208324" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="8.4252430130208324" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="8.4252430130208324" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="8.4252430130208324" />
+          <ConnectorPoint PointX="6.75" PointY="8.4252430130208324" />
+          <ConnectorPoint PointX="6.75" PointY="8.1629850260416674" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowActions_Flows" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="4.4837094366987174" />
+          <ConnectorPoint PointX="5.6875" PointY="4.9212094366987174" />
+          <ConnectorPoint PointX="5.6875" PointY="6.8219967565104174" />
+          <ConnectorPoint PointX="6" PointY="6.8219967565104174" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_Flows_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="3" PointY="2.3410953776041667" />
+          <ConnectorPoint PointX="3.2916666666666665" PointY="2.3410953776041663" />
+          <ConnectorPoint PointX="3.4583333333333335" PointY="2.3410953776041667" />
+          <ConnectorPoint PointX="3.75" PointY="2.3410953776041667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SimpleFlowModel.FlowInstances" Width="1.5" PointX="6.75" PointY="3" Height="1.7879850260416674" />
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowInstances_Actions">
+          <ConnectorPoint PointX="2.25" PointY="6.1439925130208328" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="6.1439925130208319" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="6.1439925130208328" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="6.1439925130208319" />
+          <ConnectorPoint PointX="5.833333333333333" PointY="6.1439925130208328" />
+          <ConnectorPoint PointX="7.90625" PointY="6.1439925130208328" />
+          <ConnectorPoint PointX="7.90625" PointY="5.172587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowInstances_Users">
+          <ConnectorPoint PointX="3" PointY="1.5142956888020827" />
+          <ConnectorPoint PointX="3.2916666666666665" PointY="1.514295688802082" />
+          <ConnectorPoint PointX="3.4583333333333335" PointY="1.5142956888020827" />
+          <ConnectorPoint PointX="3.6875" PointY="1.5142956888020827" />
+          <ConnectorPoint PointX="3.6875" PointY="1.3124999999999998" />
+          <ConnectorPoint PointX="5.9375" PointY="1.3124999999999998" />
+          <ConnectorPoint PointX="5.9375" PointY="2.7927864583333388" />
+          <ConnectorPoint PointX="7.5" PointY="2.7927864583333388" />
+          <ConnectorPoint PointX="7.5" PointY="3" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowInstances_Flows">
+          <ConnectorPoint PointX="5.25" PointY="3.675219667968749" />
+          <ConnectorPoint PointX="6.416666666666667" PointY="3.6752196679687485" />
+          <ConnectorPoint PointX="6.583333333333333" PointY="3.675219667968749" />
+          <ConnectorPoint PointX="6.75" PointY="3.675219667968749" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SimpleFlowModel.ApplicationInfo" Width="1.5" PointX="8.5" PointY="5.5" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="SimpleFlowModel.ActionOptions" Width="1.5" PointX="6" PointY="11.5" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="SimpleFlowModel.FlowActionOptions" Width="1.5" PointX="11.25" PointY="7.25" Height="1.9802864583333353" />
+        <EntityTypeShape EntityType="SimpleFlowModel.FlowMOInstances" Width="1.5" PointX="10" PointY="3.625" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="SimpleFlowModel.FlowMultiOptions" Width="1.5" PointX="8.625" PointY="0.625" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="SimpleFlowModel.MonitorInstances" Width="1.5" PointX="6" PointY="14.75" Height="3.5186979166666656" />
+        <EntityTypeShape EntityType="SimpleFlowModel.Options" Width="1.5" PointX="3.75" PointY="13.375" Height="1.7879850260416657" />
+        <AssociationConnector Association="SimpleFlowModel.FK_ActionOptions_Actions">
+          <ConnectorPoint PointX="1.5" PointY="9.2686979166666656" />
+          <ConnectorPoint PointX="1.5" PointY="12.146399258422852" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="12.146399258422852" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="12.146399258422852" />
+          <ConnectorPoint PointX="6" PointY="12.146399258422852" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_ActionOptions_Options">
+          <ConnectorPoint PointX="4.5" PointY="13.375" />
+          <ConnectorPoint PointX="4.5" PointY="12.791951629211427" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="12.791951629211427" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="12.791951629211427" />
+          <ConnectorPoint PointX="6" PointY="12.791951629211427" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowActionOptions_ActionOptions">
+          <ConnectorPoint PointX="7.5" PointY="12.393992513020834" />
+          <ConnectorPoint PointX="12" PointY="12.393992513020834" />
+          <ConnectorPoint PointX="12" PointY="9.2302864583333353" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowActionOptions_Flows">
+          <ConnectorPoint PointX="4.90625" PointY="4.5090950520833326" />
+          <ConnectorPoint PointX="4.90625" PointY="8.5958968098958337" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="8.5958968098958337" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="8.5958968098958337" />
+          <ConnectorPoint PointX="11.25" PointY="8.5958968098958337" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowMOInstances_FlowInstances">
+          <ConnectorPoint PointX="8.25" PointY="4.3987939453125" />
+          <ConnectorPoint PointX="10" PointY="4.3987939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowMOInstances_FlowMultiOptions">
+          <ConnectorPoint PointX="9.375" PointY="2.9898893229166674" />
+          <ConnectorPoint PointX="9.375" PointY="3.325" />
+          <ConnectorPoint PointX="10.499999500000001" PointY="3.325" />
+          <ConnectorPoint PointX="10.499999500000001" PointY="3.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowMultiOptions_Flows">
+          <ConnectorPoint PointX="5.25" PointY="2.9538378906250031" />
+          <ConnectorPoint PointX="6.416666666666667" PointY="2.9538378906250027" />
+          <ConnectorPoint PointX="6.583333333333333" PointY="2.9538378906250031" />
+          <ConnectorPoint PointX="8.2916666666666661" PointY="2.9538378906250027" />
+          <ConnectorPoint PointX="8.4583333333333339" PointY="2.9538378906250031" />
+          <ConnectorPoint PointX="8.625" PointY="2.9538378906250031" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_MonitorInstances_Flows">
+          <ConnectorPoint PointX="5.2257692307692309" PointY="4.5090950520833326" />
+          <ConnectorPoint PointX="5.625" PointY="4.9083258213141017" />
+          <ConnectorPoint PointX="5.625" PointY="16.509348958333334" />
+          <ConnectorPoint PointX="6" PointY="16.509348958333334" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SimpleFlowModel.FlowActionInputs" Width="1.5" PointX="12.25" PointY="0.5" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="SimpleFlowModel.FlowActionOutputs" Width="1.5" PointX="12.25" PointY="3.25" Height="1.9802864583333388" />
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowActionInputs_ActionInputs">
+          <ConnectorPoint PointX="3.375" PointY="4.125" />
+          <ConnectorPoint PointX="3.375" PointY="0.521484375" />
+          <ConnectorPoint PointX="12.25" PointY="0.521484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowActionOutputs_ActionOutputs">
+          <ConnectorPoint PointX="4.5" PointY="7.2689925130208337" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="7.2689925130208328" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="7.2689925130208337" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="7.2689925130208328" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="7.2689925130208337" />
+          <ConnectorPoint PointX="5.75" PointY="7.2689925130208337" />
+          <ConnectorPoint PointX="5.75" PointY="5.422587890625" />
+          <ConnectorPoint PointX="7.822916666666667" PointY="5.4225878906249987" />
+          <ConnectorPoint PointX="7.989583333333333" PointY="5.422587890625" />
+          <ConnectorPoint PointX="8.5" PointY="5.422587890625" />
+          <ConnectorPoint PointX="8.5" PointY="5.25" />
+          <ConnectorPoint PointX="9.75" PointY="5.25" />
+          <ConnectorPoint PointX="9.75" PointY="5.4706835937500031" />
+          <ConnectorPoint PointX="13" PointY="5.4706835937500031" />
+          <ConnectorPoint PointX="13" PointY="5.2302864583333388" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowActionInputs_Flows">
+          <ConnectorPoint PointX="4.5" PointY="1.375" />
+          <ConnectorPoint PointX="4.5" PointY="0.5419921875" />
+          <ConnectorPoint PointX="12.25" PointY="0.5419921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="SimpleFlowModel.FK_FlowActionOutputs_Flows">
+          <ConnectorPoint PointX="5.25" PointY="4.0794645523337332" />
+          <ConnectorPoint PointX="6.5" PointY="4.0794645523337332" />
+          <ConnectorPoint PointX="6.5" PointY="2.75" />
+          <ConnectorPoint PointX="8.375" PointY="2.75" />
+          <ConnectorPoint PointX="8.375" PointY="3.2398893229166674" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="3.239889322916667" />
+          <ConnectorPoint PointX="9.4583333333333339" PointY="3.2398893229166674" />
+          <ConnectorPoint PointX="12" PointY="3.2398893229166674" />
+          <ConnectorPoint PointX="12" PointY="3" />
+          <ConnectorPoint PointX="13" PointY="3" />
+          <ConnectorPoint PointX="13" PointY="3.25" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SimpleFlowModel.UseCases" Width="1.5" PointX="6" PointY="0.75" Height="1.9802864583333388" />
+        <AssociationConnector Association="SimpleFlowModel.FK_UseCases_Flows">
+          <ConnectorPoint PointX="5.25" PointY="2.0526432291666694" />
+          <ConnectorPoint PointX="6" PointY="2.0526432291666694" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
